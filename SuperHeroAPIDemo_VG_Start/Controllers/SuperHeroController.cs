@@ -54,7 +54,7 @@ namespace SuperHeroAPIDemo_G.Controllers
         public async Task<ActionResult<SuperHero>> GetOne(int id)
         {
             //var hero = heroes.Find(s => s.Id == id);
-            var hero = _dbContext.SuperHeroes.Find(id);
+            var hero = await _dbContext.SuperHeroes.FindAsync(id);
 
             if (hero == null)
             {
@@ -62,6 +62,7 @@ namespace SuperHeroAPIDemo_G.Controllers
             }
             return Ok(hero);
         }
+
 
         // POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST //
         // POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST - POST //
